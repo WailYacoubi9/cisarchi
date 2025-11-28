@@ -1,0 +1,74 @@
+version: '3.8'
+
+services:
+  # Reverse Proxy Nginx
+  nginx:
+    image: nginx:alpine
+    container_name: cisarchi-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8888:8888"  # Endpoint de santé
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      # Pour SSL en production (décommenter si nécessaire)
+      # - ./ssl:/etc/nginx/ssl:ro
+      - nginx-logs:/var/log/nginx
+    depends_on:
+      - keycloak
+      - webapp
+    networks:
+      - cisarchi-network
+    restart: unless-stopped
+
+  # Keycloak (serveur d'authentification)
+  keycloak:
+    image: quay.io/keycloak/keycloak:latest
+    container_name: cisarchi-keycloak
+    environment:
+      KC_BOOTSTRAP_ADMIN_USERNAME: admin
+      KC_BOOTSTRAP_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
+      KEYCLOAK_DEFAULT_REALM: projetcis
+    volumes:
+      - ../realm.json:/opt/keycloak/data/import/realm.json:ro
+      - keycloak-data:/opt/keycloak/data
+    command:
+      - start-dev
+      - --import-realm
+    networks:
+      - cisarchi-network
+    restart: unless-stopped
+    # Pas de port exposé publiquement, seulement via nginx
+
+  # Application webapp2
+  webapp:
+    build:
+      context: ../webapp2
+      dockerfile: Dockerfile
+    container_name: cisarchi-webapp
+    environment:
+      KEYCLOAK_URL: http://keycloak:8080
+      REALM: projetcis
+      CLIENT_ID: webapp
+      CLIENT_SECRET: ${WEBAPP_CLIENT_SECRET}
+      PORT: 3000
+      REDIRECT_URI: https://www.monapp.fr/auth/callback
+      SESSION_SECRET: ${SESSION_SECRET}
+      KEYCLOAK_ADMIN_USER: admin
+      KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
+    depends_on:
+      - keycloak
+    networks:
+      - cisarchi-network
+    restart: unless-stopped
+    # Pas de port exposé publiquement, seulement via nginx
+
+volumes:
+  keycloak-data:
+    driver: local
+  nginx-logs:
+    driver: local
+
+networks:
+  cisarchi-network:
+    driver: bridge

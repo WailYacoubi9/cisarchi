@@ -1,5 +1,35 @@
 # Configuration Keycloak & Application Node.js
 
+## 🆕 Nouvelle fonctionnalité : Device Flow OAuth2
+
+Ce projet implémente maintenant le **Device Flow OAuth2** pour permettre l'authentification de devices clients (IoT, CLI, etc.) qui ne peuvent pas accepter de connexions entrantes.
+
+📖 **Documentation complète** : [ACTION_PLAN.md](./ACTION_PLAN.md)
+
+### Composants ajoutés
+
+- **device-client/** : Client CLI avec Device Flow OAuth2
+- **webapp2/services/deviceService.js** : Gestion des devices via Keycloak Admin API
+- **webapp2/routes/devices.js** : API REST pour gérer les devices
+- **nginx/** : Reverse proxy pour séparer auth.monapp.fr et www.monapp.fr
+
+### Démarrage rapide
+
+```bash
+# Option 1 : Déploiement complet avec Docker Compose
+cd nginx
+cp .env.example .env
+nano .env  # Configurer les variables
+docker-compose up -d
+
+# Option 2 : Device client uniquement
+cd device-client
+npm install
+npm run login
+```
+
+---
+
 ## Etape préliminaire: Configuration de Https locale
 L’application utilise HTTPS obligatoire pour respecter PKCE + OIDC.
 Pour cela, on génère un certificat SSL local avec mkcert.

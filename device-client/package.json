@@ -1,0 +1,31 @@
+{
+  "name": "device-client",
+  "version": "1.0.0",
+  "description": "Client Device avec OAuth2 Device Flow pour Keycloak",
+  "main": "device-cli.js",
+  "bin": {
+    "device-cli": "./device-cli.js"
+  },
+  "scripts": {
+    "start": "node device-cli.js",
+    "login": "node device-cli.js login",
+    "status": "node device-cli.js status",
+    "logout": "node device-cli.js logout",
+    "refresh": "node device-cli.js refresh"
+  },
+  "keywords": [
+    "oauth2",
+    "device-flow",
+    "keycloak",
+    "authentication"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "dotenv": "^16.3.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
