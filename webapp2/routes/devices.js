@@ -253,12 +253,13 @@ router.get('/api/devices/clients', requireAuth, requireAdmin, async (req, res) =
 });
 
 /**
- * GET /devices (Page HTML)
- * Page de gestion des devices (admin uniquement)
+ * GET /admin/devices (Page HTML)
+ * Page de gestion des devices OAuth2 (admin uniquement)
+ * Cette page affiche les sessions actives et permet de gérer les devices connectés
  */
-router.get('/devices', requireAuth, requireAdmin, (req, res) => {
-    res.render('pages/devices', {
-        title: 'Gestion des Devices',
+router.get('/admin/devices', requireAuth, requireAdmin, (req, res) => {
+    res.render('pages/devices-admin', {
+        title: 'Gestion des Devices OAuth2',
         user: req.session.userinfo,
     });
 });
