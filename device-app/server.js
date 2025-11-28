@@ -59,9 +59,11 @@ app.post('/start-device-flow', async (req, res) => {
       started_at: Date.now()
     };
 
-    // Générer le QR code
-    const qrCodeDataUrl = await qrcode.toDataURL(deviceFlowState.verification_uri_complete);
+    // Générer le QR code qui pointe vers webapp avec le code pré-rempli
+    const webappActivationUrl = `https://localhost:3000/activate?code=${deviceFlowState.user_code}`;
+    const qrCodeDataUrl = await qrcode.toDataURL(webappActivationUrl);
     deviceFlowState.qr_code = qrCodeDataUrl;
+    deviceFlowState.webapp_activation_url = webappActivationUrl;
 
     console.log('✅ Device Flow initié avec succès');
     console.log(`📱 Code utilisateur: ${deviceFlowState.user_code}`);
@@ -168,37 +170,14 @@ async function getUserInfo(token) {
   }
 }
 
-// API pour vérifier le statut (pour webapp)
-app.get('/api/status', async (req, res) => {
-  res.header('Access-Control-Allow-Origin', 'https://localhost:3000');
-  
-  if (accessToken) {
-    const userInfo = await getUserInfo(accessToken);
-    res.json({
-      authenticated: true,
-      user: userInfo
-    });
-  } else if (deviceFlowState) {
-    res.json({
-      authenticated: false,
-      pending: true,
-      user_code: deviceFlowState.user_code,
-      verification_uri: deviceFlowState.verification_uri
-    });
-  } else {
-    res.json({
-      authenticated: false,
-      pending: false
-    });
-  }
-});
-
-// Route interne pour webapp
+// Route interne pour l'UI du device (PAS pour webapp externe)
+// Cette route est utilisée par le frontend du device pour afficher son état
 app.get('/status', async (req, res) => {
   if (accessToken) {
     const userInfo = await getUserInfo(accessToken);
     res.json({
       authenticated: true,
+      pending: false,
       user: userInfo
     });
   } else if (deviceFlowState) {
@@ -226,8 +205,8 @@ app.post('/logout', (req, res) => {
 
 // Ouvrir le navigateur automatiquement
 app.post('/open-browser', async (req, res) => {
-  if (deviceFlowState?.verification_uri_complete) {
-    await open(deviceFlowState.verification_uri_complete);
+  if (deviceFlowState?.webapp_activation_url) {
+    await open(deviceFlowState.webapp_activation_url);
     res.json({ success: true });
   } else {
     res.status(400).json({ success: false, error: 'Aucun flow en cours' });
