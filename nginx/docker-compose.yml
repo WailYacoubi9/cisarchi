@@ -28,7 +28,9 @@ services:
     environment:
       KC_BOOTSTRAP_ADMIN_USERNAME: admin
       KC_BOOTSTRAP_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
-      KEYCLOAK_DEFAULT_REALM: projetcis
+      KC_HTTP_ENABLED: "true"
+      KC_HOSTNAME_STRICT: "false"
+      KC_HOSTNAME_STRICT_HTTPS: "false"
     volumes:
       - ../realm.json:/opt/keycloak/data/import/realm.json:ro
       - keycloak-data:/opt/keycloak/data
@@ -37,6 +39,12 @@ services:
       - --import-realm
     networks:
       - cisarchi-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health/ready"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 60s
     restart: unless-stopped
     # Pas de port exposé publiquement, seulement via nginx
 
@@ -57,7 +65,8 @@ services:
       KEYCLOAK_ADMIN_USER: admin
       KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
     depends_on:
-      - keycloak
+      keycloak:
+        condition: service_healthy
     networks:
       - cisarchi-network
     restart: unless-stopped
