@@ -4,29 +4,45 @@
 
 Ce projet implémente maintenant le **Device Flow OAuth2** pour permettre l'authentification de devices clients (IoT, CLI, etc.) qui ne peuvent pas accepter de connexions entrantes.
 
-📖 **Documentation complète** : [ACTION_PLAN.md](./ACTION_PLAN.md)
+### 📚 Documentation
 
-### Composants ajoutés
+| Guide | Description |
+|-------|-------------|
+| **[🚀 QUICK_START.md](./QUICK_START.md)** | Démarrage rapide et commandes essentielles |
+| **[🧪 TESTING_GUIDE.md](./TESTING_GUIDE.md)** | Guide de test complet étape par étape |
+| **[📋 ACTION_PLAN.md](./ACTION_PLAN.md)** | Architecture et plan d'implémentation détaillé |
+| **[✅ verify-setup.sh](./verify-setup.sh)** | Script de vérification automatique |
+
+### 🏗️ Composants ajoutés
 
 - **device-client/** : Client CLI avec Device Flow OAuth2
 - **webapp2/services/deviceService.js** : Gestion des devices via Keycloak Admin API
 - **webapp2/routes/devices.js** : API REST pour gérer les devices
 - **nginx/** : Reverse proxy pour séparer auth.monapp.fr et www.monapp.fr
 
-### Démarrage rapide
+### 🚀 Démarrage rapide
 
 ```bash
-# Option 1 : Déploiement complet avec Docker Compose
+# 1. Créer le fichier de configuration
 cd nginx
-cp .env.example .env
-nano .env  # Configurer les variables
+nano .env  # Configurer KEYCLOAK_ADMIN_PASSWORD, WEBAPP_CLIENT_SECRET, SESSION_SECRET
+
+# 2. Démarrer tous les services
 docker-compose up -d
 
-# Option 2 : Device client uniquement
+# 3. Vérifier l'installation (attendre ~60s pour Keycloak)
+cd ..
+./verify-setup.sh
+
+# 4. Tester Device Flow
 cd device-client
-npm install
 npm run login
+
+# 5. Accéder à l'application web
+# http://localhost:3000
 ```
+
+**📖 Pour plus de détails, consultez [QUICK_START.md](./QUICK_START.md)**
 
 ---
 
