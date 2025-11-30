@@ -1,0 +1,303 @@
+[
+  {
+    "movie_id": "m40001",
+    "title": "Inception",
+    "director": "Christopher Nolan",
+    "year": 2010,
+    "genres": ["Sci-Fi", "Thriller"],
+    "duration": 148,
+    "country": "USA",
+    "ratings": [
+      { "source": "IMDb", "score": 88, "date": { "$date": "2010-07-16T00:00:00.000Z" } },
+      { "source": "Metacritic", "score": 74, "date": { "$date": "2010-07-15T00:00:00.000Z" } }
+    ],
+    "cast": ["Leonardo DiCaprio", "Marion Cotillard", "Tom Hardy"],
+    "budget": 160000000,
+    "boxOffice": 829895144
+  },
+  {
+    "movie_id": "m40002",
+    "title": "The Dark Knight",
+    "director": "Christopher Nolan",
+    "year": 2008,
+    "genres": ["Action", "Crime", "Drama"],
+    "duration": 152,
+    "country": "USA",
+    "ratings": [
+      { "source": "IMDb", "score": 90, "date": { "$date": "2008-07-18T00:00:00.000Z" } },
+      { "source": "Rotten Tomatoes", "score": 94, "date": { "$date": "2008-07-17T00:00:00.000Z" } }
+    ],
+    "cast": ["Christian Bale", "Heath Ledger", "Aaron Eckhart"],
+    "budget": 185000000,
+    "boxOffice": 1004558444
+  },
+  {
+    "movie_id": "m40003",
+    "title": "Interstellar",
+    "director": "Christopher Nolan",
+    "year": 2014,
+    "genres": ["Sci-Fi", "Drama"],
+    "duration": 169,
+    "country": "USA",
+    "ratings": [
+      { "source": "IMDb", "score": 87, "date": { "$date": "2014-11-07T00:00:00.000Z" } },
+      { "source": "Metacritic", "score": 74, "date": { "$date": "2014-11-06T00:00:00.000Z" } }
+    ],
+    "cast": ["Matthew McConaughey", "Anne Hathaway", "Jessica Chastain"],
+    "budget": 165000000,
+    "boxOffice": 677471339
+  },
+  {
+    "movie_id": "m40004",
+    "title": "Pulp Fiction",
+    "director": "Quentin Tarantino",
+    "year": 1994,
+    "genres": ["Crime", "Drama"],
+    "duration": 154,
+    "country": "USA",
+    "ratings": [
+      { "source": "IMDb", "score": 89, "date": { "$date": "1994-10-14T00:00:00.000Z" } },
+      { "source": "Rotten Tomatoes", "score": 92, "date": { "$date": "1994-10-13T00:00:00.000Z" } }
+    ],
+    "cast": ["John Travolta", "Uma Thurman", "Samuel L. Jackson"],
+    "budget": 8000000,
+    "boxOffice": 213928762
+  },
+  {
+    "movie_id": "m40005",
+    "title": "The Matrix",
+    "director": "Wachowski Sisters",
+    "year": 1999,
+    "genres": ["Sci-Fi", "Action"],
+    "duration": 136,
+    "country": "USA",
+    "ratings": [
+      { "source": "IMDb", "score": 87, "date": { "$date": "1999-03-31T00:00:00.000Z" } },
+      { "source": "Metacritic", "score": 73, "date": { "$date": "1999-03-30T00:00:00.000Z" } }
+    ],
+    "cast": ["Keanu Reeves", "Laurence Fishburne", "Carrie-Anne Moss"],
+    "budget": 63000000,
+    "boxOffice": 463517383
+  },
+  {
+    "movie_id": "m40006",
+    "title": "Amélie",
+    "director": "Jean-Pierre Jeunet",
+    "year": 2001,
+    "genres": ["Romance", "Comedy"],
+    "duration": 122,
+    "country": "France",
+    "ratings": [
+      { "source": "IMDb", "score": 82, "date": { "$date": "2001-04-25T00:00:00.000Z" } },
+      { "source": "Rotten Tomatoes", "score": 89, "date": { "$date": "2001-04-24T00:00:00.000Z" } }
+    ],
+    "cast": ["Audrey Tautou", "Mathieu Kassovitz"],
+    "budget": 10000000,
+    "boxOffice": 174200000
+  },
+  {
+    "movie_id": "m40007",
+    "title": "Parasite",
+    "director": "Bong Joon-ho",
+    "year": 2019,
+    "genres": ["Thriller", "Drama"],
+    "duration": 132,
+    "country": "South Korea",
+    "ratings": [
+      { "source": "IMDb", "score": 85, "date": { "$date": "2019-05-30T00:00:00.000Z" } },
+      { "source": "Metacritic", "score": 96, "date": { "$date": "2019-05-29T00:00:00.000Z" } },
+      { "source": "Rotten Tomatoes", "score": 98, "date": { "$date": "2019-05-29T00:00:00.000Z" } }
+    ],
+    "cast": ["Song Kang-ho", "Lee Sun-kyun", "Cho Yeo-jeong"],
+    "budget": 11400000,
+    "boxOffice": 258662545
+  },
+  {
+    "movie_id": "m40008",
+    "title": "La La Land",
+    "director": "Damien Chazelle",
+    "year": 2016,
+    "genres": ["Musical", "Romance", "Drama"],
+    "duration": 128,
+    "country": "USA",
+    "ratings": [
+      { "source": "IMDb", "score": 80, "date": { "$date": "2016-12-09T00:00:00.000Z" } },
+      { "source": "Metacritic", "score": 93, "date": { "$date": "2016-12-08T00:00:00.000Z" } }
+    ],
+    "cast": ["Ryan Gosling", "Emma Stone"],
+    "budget": 30000000,
+    "boxOffice": 446092357
+  },
+  {
+    "movie_id": "m40009",
+    "title": "The Shawshank Redemption",
+    "director": "Frank Darabont",
+    "year": 1994,
+    "genres": ["Drama"],
+    "duration": 142,
+    "country": "USA",
+    "ratings": [
+      { "source": "IMDb", "score": 93, "date": { "$date": "1994-09-23T00:00:00.000Z" } },
+      { "source": "Metacritic", "score": 80, "date": { "$date": "1994-09-22T00:00:00.000Z" } }
+    ],
+    "cast": ["Tim Robbins", "Morgan Freeman"],
+    "budget": 25000000,
+    "boxOffice": 28341469
+  },
+  {
+    "movie_id": "m40010",
+    "title": "Blade Runner 2049",
+    "director": "Denis Villeneuve",
+    "year": 2017,
+    "genres": ["Sci-Fi", "Thriller"],
+    "duration": 164,
+    "country": "USA",
+    "ratings": [
+      { "source": "IMDb", "score": 80, "date": { "$date": "2017-10-06T00:00:00.000Z" } },
+      { "source": "Metacritic", "score": 81, "date": { "$date": "2017-10-05T00:00:00.000Z" } }
+    ],
+    "cast": ["Ryan Gosling", "Harrison Ford", "Ana de Armas"],
+    "budget": 150000000,
+    "boxOffice": 259239658
+  },
+  {
+    "movie_id": "m50015",
+    "title": "The Grand Budapest Hotel",
+    "director": "Wes Anderson",
+    "year": 2014,
+    "genres": ["Comedy", "Drama"],
+    "duration": 99,
+    "country": "USA",
+    "ratings": [
+      { "source": "IMDb", "score": 81, "date": { "$date": "2014-03-07T00:00:00.000Z" } },
+      { "source": "Rotten Tomatoes", "score": 92, "date": { "$date": "2014-03-06T00:00:00.000Z" } }
+    ],
+    "cast": ["Ralph Fiennes", "Tony Revolori"],
+    "budget": 25000000,
+    "boxOffice": 172907880,
+    "averagePrice": 15
+  },
+  {
+    "movie_id": "m50020",
+    "title": "Arrival",
+    "director": "Denis Villeneuve",
+    "year": 2016,
+    "genres": ["Sci-Fi", "Drama"],
+    "duration": 116,
+    "country": "USA",
+    "ratings": [
+      { "source": "IMDb", "score": 79, "date": { "$date": "2016-11-11T00:00:00.000Z" } },
+      { "source": "Metacritic", "score": 81, "date": { "$date": "2016-11-10T00:00:00.000Z" } }
+    ],
+    "cast": ["Amy Adams", "Jeremy Renner"],
+    "budget": 47000000,
+    "boxOffice": 203388186,
+    "averagePrice": 12
+  },
+  {
+    "movie_id": "m50025",
+    "title": "Moonlight",
+    "director": "Barry Jenkins",
+    "year": 2016,
+    "genres": ["Drama"],
+    "duration": 111,
+    "country": "USA",
+    "ratings": [
+      { "source": "IMDb", "score": 74, "date": { "$date": "2016-10-21T00:00:00.000Z" } },
+      { "source": "Metacritic", "score": 99, "date": { "$date": "2016-10-20T00:00:00.000Z" } }
+    ],
+    "cast": ["Trevante Rhodes", "André Holland"],
+    "budget": 1500000,
+    "boxOffice": 65046687,
+    "averagePrice": 10
+  },
+  {
+    "movie_id": "m50030",
+    "title": "Roma",
+    "director": "Alfonso Cuarón",
+    "year": 2018,
+    "genres": ["Drama"],
+    "duration": 135,
+    "country": "Mexico",
+    "ratings": [
+      { "source": "IMDb", "score": 77, "date": { "$date": "2018-12-14T00:00:00.000Z" } },
+      { "source": "Metacritic", "score": 96, "date": { "$date": "2018-12-13T00:00:00.000Z" } }
+    ],
+    "cast": ["Yalitza Aparicio", "Marina de Tavira"],
+    "budget": 15000000,
+    "boxOffice": 1158696,
+    "averagePrice": 8
+  },
+  {
+    "movie_id": "m50035",
+    "title": "Mad Max: Fury Road",
+    "director": "George Miller",
+    "year": 2015,
+    "genres": ["Action", "Sci-Fi"],
+    "duration": 120,
+    "country": "Australia",
+    "ratings": [
+      { "source": "IMDb", "score": 81, "date": { "$date": "2015-05-15T00:00:00.000Z" } },
+      { "source": "Rotten Tomatoes", "score": 97, "date": { "$date": "2015-05-14T00:00:00.000Z" } }
+    ],
+    "cast": ["Tom Hardy", "Charlize Theron"],
+    "budget": 150000000,
+    "boxOffice": 378858796,
+    "averagePrice": 14
+  },
+  {
+    "movie_id": "m60001",
+    "title": "Dunkirk",
+    "director": "Christopher Nolan",
+    "year": 2017,
+    "genres": ["War", "Drama", "Thriller"],
+    "duration": 106,
+    "country": "UK",
+    "ratings": [
+      { "source": "IMDb", "score": 78, "date": { "$date": "2017-07-21T00:00:00.000Z" } },
+      { "source": "Metacritic", "score": 94, "date": { "$date": "2017-07-20T00:00:00.000Z" } }
+    ],
+    "cast": ["Fionn Whitehead", "Tom Hardy", "Mark Rylance"]
+  },
+  {
+    "movie_id": "m60005",
+    "title": "Get Out",
+    "director": "Jordan Peele",
+    "year": 2017,
+    "genres": ["Horror", "Thriller"],
+    "duration": 104,
+    "country": "USA",
+    "ratings": [
+      { "source": "IMDb", "score": 77, "date": { "$date": "2017-02-24T00:00:00.000Z" } },
+      { "source": "Rotten Tomatoes", "score": 98, "date": { "$date": "2017-02-23T00:00:00.000Z" } }
+    ],
+    "cast": ["Daniel Kaluuya", "Allison Williams"]
+  },
+  {
+    "movie_id": "m60010",
+    "title": "Whiplash",
+    "director": "Damien Chazelle",
+    "year": 2014,
+    "genres": ["Drama", "Music"],
+    "duration": 106,
+    "country": "USA",
+    "ratings": [
+      { "source": "IMDb", "score": 85, "date": { "$date": "2014-10-10T00:00:00.000Z" } },
+      { "source": "Metacritic", "score": 88, "date": { "$date": "2014-10-09T00:00:00.000Z" } }
+    ],
+    "cast": ["Miles Teller", "J.K. Simmons"]
+  },
+  {
+    "movie_id": "m99999",
+    "title": "Unknown Movie",
+    "director": "John Doe",
+    "year": 2015,
+    "genres": ["Unknown"],
+    "duration": 90,
+    "country": "USA",
+    "ratings": [
+      { "source": "IMDb", "score": 45, "date": { "$date": "2015-01-01T00:00:00.000Z" } }
+    ],
+    "cast": ["Actor One", "Actor Two"]
+  }
+]
